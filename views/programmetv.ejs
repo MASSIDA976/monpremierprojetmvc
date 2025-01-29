@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Chaîne TV Culturelle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <%- include("navbar") -%>
+    <header>
+        <h1>Bienvenue sur Chaîne TV Culturelle</h1>
+        <p>Découvrez nos vidéos culturelles : Chigoma, débats, mazaraka, chants, et bien plus !</p>
+    </header>
+    <main>
+        <h2>Programmes Récents</h2>
+        <ul>
+            <% resultat.forEach(programme => { %>
+                <li>
+                    <strong><%= programme.titre %></strong> 
+                    (<%= programme.type_programme %>) - Diffusé le : <%= programme.date_diffusion %>
+                </li>
+            <% }) %>
+        </ul>
+    </main>
+</body>
+</html>

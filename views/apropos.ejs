@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>L'Équipe</title>
+    <link rel="stylesheet" href="equipe.css">
+</head>
+<body>
+    <header>
+        <h1>Notre Équipe</h1>
+    </header>
+    <%- include("navbar") -%>
+    <main>
+        <ul>
+
+            <% resultat.forEach(membre => { %>
+                <li>
+                    <strong><%= membre.nom %></strong> - <%= membre.fonction %>
+                </li>
+            <% }) %>
+        </ul>
+    </main>
+</body>
+</html>

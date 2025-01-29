@@ -1,0 +1,81 @@
+/* Style de base pour le corps de la page */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+/* Style du header */
+header {
+    background-color: #2980b9;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    text-transform: uppercase;
+}
+
+/* Style du contenu principal */
+main {
+    padding: 10px;
+    background-color: #fff;
+}
+
+/* Style des listes des membres de l'équipe */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    background-color: #ecf0f1;
+    margin: 5px 0; /* Réduction de l'espace entre les éléments */
+    padding: 8px 12px; /* Réduction du padding */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center; /* Alignement vertical */
+    gap: 10px; /* Réduction de l'écart entre les éléments */
+}
+
+/* Style des noms et fonctions pour les rapprocher */
+ul li strong {
+    font-size: 1.2em;
+    color: #34495e;
+}
+
+ul li p {
+    font-size: 1em;
+    color: #7f8c8d;
+    margin: 0;
+}
+
+/* Style des éléments lorsque l'on survole */
+ul li:hover {
+    background-color: #dfe6e9;
+    cursor: pointer;
+}
+
+/* Responsivité */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    main {
+        padding: 15px;
+    }
+
+    ul li {
+        font-size: 0.95em;
+        flex-direction: column; /* Pour empiler nom et fonction sur mobile */
+        text-align: center;
+        gap: 5px;
+    }
+}
