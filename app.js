@@ -25,14 +25,14 @@ app.set("view engine", "ejs");
 // Servir les fichiers statiques
 app.use(express.static("public"));
 
-
+//Cette ligne crée une route qui répond aux requêtes GET envoyées à l'URL "/apropos"
 app.get("/apropos", (req, res) => {
 
-    req.getConnection((erreur, connection)=> {
+    req.getConnection((erreur, connection)=> { // Cette fonction établit une connexion avec la base de données MySQL grâce à `expreexpress-myconnection
         if(erreur) {
             console.log(erreur);
         } else {
-            connection.query("SELECT * FROM equipe",[], (err, resultat) => {
+            connection.query("SELECT * FROM equipe",[], (err, resultat) => { // Cette ligne exécute une requête SQL qui sélectionne toutes les colonnes de la table equipe.
                 if (err) {
                     console.log(err);
                 } else {
@@ -49,7 +49,7 @@ app.get("/apropos", (req, res) => {
 // Route "Programme TV"
 app.get("/programmetv", (req, res) => {
 
-    req.getConnection((erreur, connection)=> {
+    req.getConnection((erreur, connection)=> { //Cette fonction établit une connexion avec la base de données MySQL grâce à `expreexpress-myconnection
         if(erreur) {
             console.log(erreur);
         } 

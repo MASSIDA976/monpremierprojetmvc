@@ -1,81 +1,91 @@
-/* Style de base pour le corps de la page */
+/* Styles généraux */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f5f5f5;
+    background-color: #f4f4f4;
+    color: #333;
 }
 
-/* Style du header */
+/* En-tête */
 header {
-    background-color: #2980b9;
+    background-color: #2c3e50;
     color: white;
-    padding: 20px;
     text-align: center;
+    padding: 20px 0;
 }
 
 header h1 {
     margin: 0;
-    font-size: 2.5em;
-    text-transform: uppercase;
+    font-size: 2em;
 }
 
-/* Style du contenu principal */
-main {
-    padding: 10px;
-    background-color: #fff;
-}
-
-/* Style des listes des membres de l'équipe */
-ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-ul li {
-    background-color: #ecf0f1;
-    margin: 5px 0; /* Réduction de l'espace entre les éléments */
-    padding: 8px 12px; /* Réduction du padding */
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center; /* Alignement vertical */
-    gap: 10px; /* Réduction de l'écart entre les éléments */
-}
-
-/* Style des noms et fonctions pour les rapprocher */
-ul li strong {
+header p {
     font-size: 1.2em;
-    color: #34495e;
 }
 
-ul li p {
-    font-size: 1em;
-    color: #7f8c8d;
-    margin: 0;
+/* Section de l'équipe */
+.team {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
 }
 
-/* Style des éléments lorsque l'on survole */
-ul li:hover {
-    background-color: #dfe6e9;
-    cursor: pointer;
+.member {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin: 15px;
+    padding: 20px;
+    width: 280px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
 }
 
-/* Responsivité */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 2em;
-    }
+.member:hover {
+    transform: scale(1.05);
+}
 
-    main {
-        padding: 15px;
-    }
+.member h3 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
 
-    ul li {
-        font-size: 0.95em;
-        flex-direction: column; /* Pour empiler nom et fonction sur mobile */
-        text-align: center;
-        gap: 5px;
-    }
+.member p {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #555;
+}
+
+.member img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+/* Bouton retour */
+.cta-button {
+    display: inline-block;
+    background-color: #e74c3c;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #c0392b;
+}
+
+/* Pied de page */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #2c3e50;
+    color: white;
+    margin-top: 20px;
 }

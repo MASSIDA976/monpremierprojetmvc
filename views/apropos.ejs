@@ -1,24 +1,49 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>L'Équipe</title>
-    <link rel="stylesheet" href="equipe.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notre Équipe - NdovooTV</title>
+  <link rel="stylesheet" href="equipe.css">
 </head>
 <body>
-    <header>
-        <h1>Notre Équipe</h1>
-    </header>
-    <%- include("navbar") -%>
-    <main>
-        <ul>
 
-            <% resultat.forEach(membre => { %>
-                <li>
-                    <strong><%= membre.nom %></strong> - <%= membre.fonction %>
-                </li>
-            <% }) %>
-        </ul>
-    </main>
+  <!-- En-tête -->
+  <header>
+    <h1>Rencontrez Notre Équipe</h1>
+    <p>Une équipe passionnée prête à vous offrir une expérience inoubliable.</p>
+  </header>
+
+  <!-- Liste des membres de l'équipe -->
+  <section class="team">
+    <% resultat.forEach(membre => { %>
+      <div class="member">
+        <h3><%= membre.nom %> <%= membre.prenom %></h3>
+        <p><strong>Poste :</strong> <%= membre.fonction %></p>
+        
+        <% 
+          let imageSrc = "/images/default.png"; // Image par défaut
+          if (membre.fonction) {
+            switch (membre.fonction) {
+              case "Directrice générale": imageSrc = "/images/directrice.png"; break;
+              case "Chef d'émission": imageSrc = "/images/chef_emission.webp"; break;
+              case "Programmeur d'émission": imageSrc = "/images/programmeur.png"; break;
+              case "Caméra man": imageSrc = "/images/cameraman.png"; break;
+              case "Ingénieur son": imageSrc = "/images/ingenieur_son.png"; break;
+              case "Réalisateur": imageSrc = "/images/realisateur.png"; break;
+            }
+          }
+        %>
+
+        <img src="<%= imageSrc %>" alt="Photo de <%= membre.nom %>">
+      </div>
+    <% }) %>
+  </section>
+
+  <!-- Pied de page -->
+  <footer>
+    <a href="/" class="cta-button">Retour à l'accueil</a>
+  </footer>
+
 </body>
 </html>
