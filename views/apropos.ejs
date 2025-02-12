@@ -1,48 +1,52 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Notre Équipe - NdovooTV</title>
-  <link rel="stylesheet" href="equipe.css">
+  <meta charset="UTF-8"> <!-- Définit l'encodage des caractères en UTF-8 pour supporter les caractères spéciaux -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Assure un affichage responsive sur tous les appareils -->
+  <title>Notre Équipe - NdovooTV</title> <!-- Titre de la page affiché dans l'onglet du navigateur -->
+  <link rel="stylesheet" href="equipe.css"> <!-- Lien vers la feuille de styles CSS -->
 </head>
 <body>
+  
+ <!-- Inclusion de la barre de navigation (navbar.ejs) -->
+  <%- include("navbar") -%>
 
-  <!-- En-tête -->
+  <!-- En-tête de la page -->
   <header>
-    <h1>Rencontrez Notre Équipe</h1>
-    <p>Une équipe passionnée prête à vous offrir une expérience inoubliable.</p>
+    <h1>Rencontrez Notre Équipe</h1> <!-- Titre principal de la section -->
+    <p>Une équipe passionnée prête à vous offrir une expérience inoubliable.</p> <!-- Courte description de l'équipe -->
   </header>
 
   <!-- Liste des membres de l'équipe -->
   <section class="team">
-    <% resultat.forEach(membre => { %>
+    <% resultat.forEach(membre => { %> <!-- Boucle qui parcourt la liste des membres de l'équipe -->
       <div class="member">
-        <h3><%= membre.nom %> <%= membre.prenom %></h3>
-        <p><strong>Poste :</strong> <%= membre.fonction %></p>
-        
+        <h3><%= membre.nom %> <%= membre.prenom %></h3> <!-- Affichage du nom et prénom du membre -->
+        <p><strong>Poste :</strong> <%= membre.fonction %></p> <!-- Affichage du poste du membre -->
+
         <% 
-          let imageSrc = "/images/default.png"; // Image par défaut
-          if (membre.fonction) {
-            switch (membre.fonction) {
-              case "Directrice générale": imageSrc = "/images/directrice.png"; break;
+          let imageSrc = "/images/default.png"; // Image par défaut si aucun poste spécifique n'est trouvé
+          if (membre.fonction) { 
+            switch (membre.fonction) { // Vérification du poste du membre pour assigner l'image correspondante
+              case "Directrice générale": imageSrc = "/images/directrice.jpg"; break;
               case "Chef d'émission": imageSrc = "/images/chef_emission.webp"; break;
-              case "Programmeur d'émission": imageSrc = "/images/programmeur.png"; break;
-              case "Caméra man": imageSrc = "/images/cameraman.png"; break;
-              case "Ingénieur son": imageSrc = "/images/ingenieur_son.png"; break;
-              case "Réalisateur": imageSrc = "/images/realisateur.png"; break;
+              case "Programmeur d'émission": imageSrc = "/images/programmeur.jpg"; break;
+              case "Caméra man": imageSrc = "/images/cameraman.jpg"; break;
+              case "Ingénieur son": imageSrc = "/images/ingenieur_son.jpg"; break;
+              case "Réalisateur": imageSrc = "/images/realisateur.jpg"; break;
             }
           }
         %>
 
+        <!-- Affichage de la photo du membre, avec une image par défaut si le poste n'est pas reconnu -->
         <img src="<%= imageSrc %>" alt="Photo de <%= membre.nom %>">
       </div>
-    <% }) %>
+    <% }) %> <!-- Fin de la boucle -->
   </section>
 
   <!-- Pied de page -->
   <footer>
-    <a href="/" class="cta-button">Retour à l'accueil</a>
+    <a href="/" class="cta-button">Retour à l'accueil</a> <!-- Lien de retour vers la page d'accueil -->
   </footer>
 
 </body>

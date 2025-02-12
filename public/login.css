@@ -1,0 +1,77 @@
+/* login.css */
+
+/* Styles généraux pour le corps de la page */
+body {
+    font-family: Arial, sans-serif; /* Définit la police principale */
+    background-color: #f4f7fc; /* Couleur de fond gris très clair */
+    margin: 0; /* Supprime les marges par défaut */
+    padding: 0; /* Supprime les paddings par défaut */
+    display: flex; /* Utilise flexbox pour la mise en page */
+    justify-content: center; /* Centre le contenu horizontalement */
+    align-items: center; /* Centre le contenu verticalement */
+    height: 100vh; /* Prend toute la hauteur de la fenêtre */
+}
+
+/* Conteneur principal de la page de connexion */
+.container {
+    background-color: white; /* Fond blanc pour le conteneur */
+    padding: 40px; /* Ajoute un espace interne de 40px */
+    border-radius: 8px; /* Bords arrondis pour un effet doux */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère autour du conteneur */
+    width: 100%; /* Prend toute la largeur disponible */
+    max-width: 400px; /* Limite la largeur à 400px */
+    text-align: center; /* Centre le texte à l'intérieur du conteneur */
+}
+
+/* Style pour le titre principal (h2) */
+h2 {
+    font-size: 2rem; /* Taille de police relativement grande */
+    color: #333; /* Couleur du texte gris foncé */
+    margin-bottom: 20px; /* Ajoute un espacement sous le titre */
+}
+
+/* Style des champs de saisie (input) */
+input {
+    width: 100%; /* Prend toute la largeur du conteneur */
+    padding: 12px; /* Ajoute un espace interne de 12px */
+    margin: 10px 0; /* Ajoute une marge verticale de 10px */
+    border: 1px solid #ddd; /* Bordure grise légère */
+    border-radius: 4px; /* Bords légèrement arrondis */
+    font-size: 1rem; /* Taille de police standard */
+}
+
+/* Effet visuel sur les champs de saisie au focus */
+input:focus {
+    border-color: #3b82f6; /* Changement de couleur de bordure au focus (bleu) */
+    outline: none; /* Supprime l'outline par défaut */
+}
+
+/* Style pour le bouton de soumission */
+button {
+    width: 100%; /* Prend toute la largeur du conteneur */
+    padding: 12px; /* Ajoute un espace interne de 12px */
+    background-color: #3b82f6; /* Couleur de fond bleue */
+    color: white; /* Texte blanc */
+    border: none; /* Supprime la bordure par défaut */
+    border-radius: 4px; /* Bords arrondis pour un effet doux */
+    font-size: 1.1rem; /* Taille de la police légèrement plus grande */
+    cursor: pointer; /* Affiche un curseur en forme de main pour l'interaction */
+}
+
+/* Effet visuel sur le bouton au survol */
+button:hover {
+    background-color: #2563eb; /* Change la couleur du fond en bleu plus foncé au survol */
+}
+
+/* Style des messages d'erreur */
+.error {
+    color: red; /* Texte rouge pour indiquer une erreur */
+    font-size: 1rem; /* Taille de police standard */
+    margin-bottom: 10px; /* Marge inférieure pour espacer du contenu suivant */
+}
+
+/* Style pour les éléments <p> (par exemple, des textes supplémentaires ou des liens) */
+p {
+    font-size: 0.9rem; /* Taille de police légèrement réduite */
+    color: #555; /* Texte gris moyen */
+}

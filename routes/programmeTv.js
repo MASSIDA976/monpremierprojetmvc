@@ -2,7 +2,7 @@
 const express = require('express');
 
 ///méthode qui gère la vue de la page 'apropos
-const aproposcontrollers = require('../controllers/apropos'); 
+const programmetvControllers = require('../controllers/programmeTv'); 
 
 // Création d'une instance du routeur d'Express pour gérer les routes
 const router = express.Router();
@@ -11,7 +11,7 @@ const router = express.Router();
 // Lorsque l'utilisateur accède à la route '/', la méthode 'aproposView' du contrôleur 'aproposcontroller' sera appelée
 
 
-router.get('/apropos', aproposcontrollers.aproposViews);
+router.get('/programmeTv',programmetvControllers.programmetvViews);
 
 
 module.exports = router;

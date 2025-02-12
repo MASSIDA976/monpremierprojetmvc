@@ -1,29 +1,53 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NdovooTV - Chaîne TV Culturelle</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8"> <!-- Définit l'encodage des caractères en UTF-8 pour supporter les caractères spéciaux -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Rendre la page responsive pour tous les appareils -->
+    <title>NdovooTV - Chaîne TV Culturelle</title> <!-- Définit le titre de la page qui s'affiche dans l'onglet du navigateur -->
+    <link rel="stylesheet" href="style.css"> <!-- Lien vers la feuille de style CSS -->
 </head>
 <body>
 
+    <!-- Inclusion de la barre de navigation (navbar.ejs) -->
     <%- include("navbar") -%>
 
+    <!-- En-tête de la page -->
     <header>
-        <h1>Bienvenue sur NdovooTV</h1>
-        <p>Découvrez nos vidéos culturelles : Chigoma, débats, mazaraka, chants, et bien plus !</p>
+        <h1>Bienvenue sur NdovooTV</h1> <!-- Titre principal de la page -->
+        <p>Découvrez nos vidéos culturelles : Chigoma, débats, mazaraka, chants, et bien plus !</p> <!-- Courte description des programmes proposés -->
     </header>
 
+    <!-- Contenu principal -->
     <main>
-        <h2>Programmes Récents</h2>
+        <h2>Programmes Récents</h2> <!-- Sous-titre de la section des programmes récents -->
         <ul>
-            <% resultat.forEach(programme => { %>
+
+            <!-- Déclaration d'un tableau de programmes vidéo en interne -->
+            <% const programmes = [
+                { titre: "Chigoma Culturel", type_programme: "Danse Traditionnelle", date_diffusion: "2024-02-01", video_id: "KqKkG64AoRE" },
+                { titre: "Débat de Mayotte", type_programme: "Débat Culturel", date_diffusion: "2024-01-25", video_id: "N8dtLTy2YRQ" },
+                { titre: "Festival Mazaraka", type_programme: "Festival", date_diffusion: "2024-01-15", video_id: "Z5wSu4IQy4E" },
+                { titre: "Chants Traditionnels", type_programme: "Musique", date_diffusion: "2024-01-10", video_id: "veR0jhwDW8Y" },
+                { titre: "Documentaire Mahorais", type_programme: "Documentaire", date_diffusion: "2023-12-20", video_id: "K5OLz6Lf0i0" }
+            ]; %>
+
+            <!-- Boucle qui parcourt le tableau et affiche chaque programme -->
+            <% programmes.forEach(programme => { %>
                 <li>
-                    <strong><%= programme.titre %></strong> 
-                    (<%= programme.type_programme %>) - Diffusé le : <%= programme.date_diffusion %>
+                    <strong><%= programme.titre %></strong> <!-- Nom du programme -->
+                    (<%= programme.type_programme %>) - Diffusé le : <%= programme.date_diffusion %> <!-- Type de programme et date de diffusion -->
+
+                    <!-- Conteneur pour la vidéo -->
+                    <div class="video-container">
+                        <!-- Intégration d'une vidéo YouTube à partir de son ID -->
+                        <iframe width="300" height="300" src="https://www.youtube.com/embed/<%= programme.video_id %>" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
                 </li>
-            <% }) %>
+            <% }) %> <!-- Fin de la boucle -->
         </ul>
     </main>
 

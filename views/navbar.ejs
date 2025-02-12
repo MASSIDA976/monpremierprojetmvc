@@ -1,12 +1,14 @@
-
-<body>
-    <nav>
-        <ul>
-          <li>
-            <a href="apropos" target="_blank">apropos</a>
-     
-            <a href="programmetv" target="_blank">programmetv</a>
-          </li>
-        </ul>
-     </nav>
-</body>
+<nav>
+    <ul>
+        <li><a href="/">Accueil</a></li>
+        <li><a href="/programmeTv">Programmes</a></li>
+        <li><a href="/apropos">Notre Équipe</a></li>
+        <% if (typeof user !== "undefined") { %>
+            <li><a href="/logout">Déconnexion</a></li>
+        <% } else { %>
+            <li><a href="/login">Connexion</a></li>
+            <li><a href="/signup">Inscription</a></li> <!-- Lien vers la page d'inscription -->
+        <% } %>
+    </ul>
+  </nav>
+  
