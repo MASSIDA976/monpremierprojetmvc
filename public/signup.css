@@ -1,94 +1,92 @@
 /* Styles généraux */
 body {
     font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
 
+/* Conteneur principal */
 .container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 400px;
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
 }
 
+/* Titre */
 h2 {
     text-align: center;
-    color: #2c3e50;
-    margin-bottom: 20px;
+    color: #333;
 }
 
+/* Formulaire */
 .signup-form {
     display: flex;
     flex-direction: column;
-    gap: 20px;
 }
 
+/* Groupes de champs */
 .form-group {
-    display: flex;
-    flex-direction: column;
+    margin-bottom: 15px;
 }
 
+/* Labels */
 label {
-    font-size: 1em;
+    font-weight: bold;
     margin-bottom: 5px;
-    color: #2c3e50;
+    display: block;
 }
 
+/* Champs de saisie */
 input {
+    width: 90%;
     padding: 10px;
-    font-size: 1em;
     border: 1px solid #ccc;
     border-radius: 5px;
-    width: 100%;
-    box-sizing: border-box;
+    font-size: 16px;
+    transition: border 0.3s;
 }
 
+/* Focus sur les champs */
 input:focus {
+    border-color: #007bff;
     outline: none;
-    border-color: #3498db;
-    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
 }
 
-button {
-    padding: 12px;
-    background-color: #e74c3c;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.1em;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    width: 100%;
-}
-
-button:hover {
-    background-color: #c0392b;
-}
-
-/* Styles pour les messages d'erreur */
+/* Message d'erreur */
 .error {
-    color: #e74c3c;
-    font-size: 0.9em;
+    color: red;
+    font-size: 14px;
     margin-top: 5px;
 }
 
-/* Responsive Design */
+/* Bouton */
+.btn {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+/* Effet au survol du bouton */
+.btn:hover {
+    background: #0056b3;
+}
+
+/* Responsive */
 @media (max-width: 480px) {
     .container {
         width: 90%;
-        padding: 15px;
-    }
-
-    button {
-        font-size: 1em;
     }
 }

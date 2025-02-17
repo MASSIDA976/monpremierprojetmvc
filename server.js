@@ -24,3 +24,4 @@ server.listen(numPort, () => {
     // Message de confirmation indiquant que le serveur est actif et sur quel port
     console.log("Le serveur est activé au port :", numPort);
 });
+

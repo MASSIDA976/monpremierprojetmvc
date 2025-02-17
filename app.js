@@ -1,4 +1,5 @@
 const express = require("express");
+//const session = require("express-session");
 const mysql2 = require("mysql2");
 const myConnection = require("express-myconnection");
 //const authRoutes = require('./routes/apropos');
@@ -6,6 +7,11 @@ const aproposRoutes = require('./routes/apropos');
 const programmeTvRoutes = require('./routes/programmeTv');
 const loginRoutes = require('./routes/login');
 const signupRoutes = require('./routes/signup');
+//const bcrypt = require('bcrypt');
+
+
+
+
 
 const app = express();
 
@@ -17,12 +23,18 @@ const optionConnection = {
     database: "chainetv"
 };
 
+
+
+
 // Middleware pour gérer la connexion MySQL
 app.use(myConnection(mysql2, optionConnection, "pool"));
 
-// Middleware pour gérer les formulaires
-app.use(express.urlencoded({ extended: false }));
+app.use(signupRoutes);
+app.use(loginRoutes);
 
+app.use(express.urlencoded({ extended: true }));  // Pour parser les données des formulaires
+
+app.use(express.json()); 
 // Configuration des vues
 app.set("views", "./views");
 app.set("view engine", "ejs");
@@ -90,11 +102,16 @@ app.use(express.static("public"));
 
 
 
+
 //app.use('/', authRoutes);
 app.use('/',aproposRoutes);
 app.use('/',programmeTvRoutes);
 app.use('/', loginRoutes);
 app.use('/', signupRoutes);
+
+
+
+
 
 // Export du module pour utilisation dans `server.js`
 module.exports = app;
